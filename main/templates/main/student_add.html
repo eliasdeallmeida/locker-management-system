@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Adicionar aluno {% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Adicionar aluno</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button class="save-btn" type="submit" onclick="student_add()">Salvar</button>
+        </form>
+    </section>
+{% endblock %}

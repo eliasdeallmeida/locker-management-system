@@ -1,0 +1,34 @@
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-btn, .edit-btn, .delete-btn, .view-btn {
+    color: black;
+    padding: 5px 10px;
+}
+
+.add-btn {
+    background-color: rgb(60, 220, 60);
+}
+
+.add-btn:hover {
+    background-color: rgb(40, 200, 40);
+}
+
+.edit-btn {
+    background-color: rgb(245, 245, 45);
+}
+
+.edit-btn:hover {
+    background-color: rgb(220, 220, 20);
+}
+
+.delete-btn {
+    background-color: rgb(220, 60, 60);
+}
+
+.delete-btn:hover {
+    background-color: rgb(200, 40, 40);
+}

@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Aluno {{ student.name}} {% endblock %}
+
+{% block content %}
+    <section>
+        <div class="section-header">
+            <h1>Detalhes do aluno</h1>
+            <div class="section-btn">
+                <a href="{% url 'student_edit' pk=student.pk %}">
+                    <button class="edit-btn">
+                        <i class="fa-solid fa-pencil"></i>
+                        Editar
+                    </button>
+                </a>
+                <a href="{% url 'student_delete' pk=student.pk %}">
+                    <button class="delete-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Excluir
+                    </button>
+                </a>
+            </div>
+        </div>
+        <p>Nome: {{ student.name }}</p>
+        <p>Email: {{ student.email }}</p>
+        <p>Matrícula: {{ student.matricula|linebreaksbr }}</p>
+        <p>Ativo: {% if student.is_active %} Sim {% else %} Não {% endif %}</p>
+    </section>
+{% endblock %}

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a, button {
+    color: #EDF0F1;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 5px;
+    background-color: rgba(0, 136, 169, 1);
+    padding: 9px 25px;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+i {
+    width: 16px;
+}
+
+header {
+    background-color: #24252A;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: "Oswald";
+    font-size: 25px;
+    text-decoration: overline;
+}
+
+.page-container {
+    display: flex;
+}
+
+aside {
+    background-color: rgb(0, 136, 169);
+    padding: 50px;
+    min-width: 20%;
+}
+
+aside nav ul li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+main {
+    /* background-color: #E3E9F7; */
+    padding: 50px;
+    width: 100vw;
+}
+
+table {
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 5px 0 0;
+    min-width: 100%;
+    margin-top: 10px;
+}
+
+thead {
+    color: white;
+    background-color: rgb(0, 136, 169);
+    border-left: 5px solid rgb(0, 136, 169);
+}
+
+tbody {
+    padding-left: 5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 5px solid white;
+    transition: all 0.3s ease 0s;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #F3F3F3;
+    border-left: 5px solid #F3F3F3;
+}
+
+tbody tr:hover {
+    border-left: 5px solid rgb(0, 136, 169);
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(0, 136, 169);
+}
+
+th, td {
+    /* border: 1px solid #24252A; */
+    padding: 10px;
+}
+
+th {
+    text-align: left;
+}
+
+footer {
+    background-color: #24252A;
+    color: #EDF0F1;
+    padding: 30px 50px;
+}
