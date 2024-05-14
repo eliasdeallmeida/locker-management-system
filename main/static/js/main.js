@@ -3,5 +3,5 @@ function student_add() {
 }
 
 function student_delete() {
-    window.alert('Aluno excluído com sucesso!')
+    return window.confirm('Tem certeza que deseja excluir esse aluno?')
 }

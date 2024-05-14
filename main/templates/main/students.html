@@ -19,9 +19,9 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Matrícula</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                    <th>Visualizar</th>
+                    <th>Ações</th>
+                    <!-- <th>Editar</th>
+                    <th>Excluir</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -30,9 +30,18 @@
                         <td>{{ student.name|linebreaksbr }}</td>
                         <td>{{ student.email|linebreaksbr }}</td>
                         <td>{{ student.matricula|linebreaksbr }}</td>
-                        <td><a href="{% url 'student_edit' pk=student.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a></td>
-                        <td><a href="{% url 'student_delete' pk=student.pk %}"><button class="delete-btn" onclick="student_delete()"><i class="fa-solid fa-trash"></i></button></a></td>
-                        <td><a href="{% url 'student_detail' pk=student.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a></td>
+                        <td>
+                            <div class="container-btn">
+                                <a href="{% url 'student_detail' pk=student.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
+                                <a href="{% url 'student_edit' pk=student.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                <form action="{% url 'student_delete' pk=student.pk %}" method="POST" onsubmit="return student_delete()">
+                                    {% csrf_token %}
+                                    <button class="delete-btn" type="submit">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>

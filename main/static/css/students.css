@@ -4,8 +4,13 @@
     align-items: center;
 }
 
+.container-btn {
+    display: flex;
+}
+
 .add-btn, .edit-btn, .delete-btn, .view-btn {
     color: black;
+    margin: 0 5px;
     padding: 5px 10px;
 }
 

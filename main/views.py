@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Student
 from .forms import StudentForm
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 
 def home(request):
@@ -43,8 +45,12 @@ def student_edit(request, pk):
 
 
 def student_delete(request, pk):
-    Student.objects.filter(id=pk).delete()
-    return redirect('students')
+    student = get_object_or_404(Student, pk=pk)
+    if request.method == 'POST':
+        student.is_active = False
+        student.save()
+        return redirect('students')
+    return HttpResponseRedirect(reverse('students'))
 
 
 def lockers(request):
