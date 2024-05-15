@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Porta {{ door.identifier }} {% endblock %}
+
+{% block content %}
+    <section>
+        <div class="section-header">
+            <h1>Detalhes da porta</h1>
+            <div class="section-btn">
+                <a href="{% url 'door_edit' pk=door.pk %}">
+                    <button class="edit-btn">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        Editar
+                    </button>
+                </a>
+            </div>
+        </div>
+        <p>Número: {{ door.number }}</p>
+        <p>Identificador: {{ door.identifier }}</p>
+        <p>Armário: {{ door.locker }}</p>
+        <p>Aluno: {% if door.student %} {{ door.student }} {% else %} Vazio {% endif %}</p>
+        <p>Ocupado: {% if door.is_occupied %} Sim {% else %} Não {% endif %}</p>
+        <p>Ativo: {% if door.is_active %} Sim {% else %} Não {% endif %}</p>
+    </section>
+{% endblock %}

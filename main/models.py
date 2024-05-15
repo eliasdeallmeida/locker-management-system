@@ -17,15 +17,15 @@ class Locker(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.number
+        return str(self.number)
 
 
 class Door(models.Model):
     number = models.IntegerField()
     identifier = models.CharField(max_length=10)
     locker = models.ForeignKey(Locker, on_delete=models.CASCADE)
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    is_occupied = False
+    student = models.ForeignKey(Student, null=True, blank=True, on_delete=models.CASCADE)
+    is_occupied = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

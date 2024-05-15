@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Adicionar armário {% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Adicionar armário</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button class="save-btn" type="submit" onclick="locker_add()">Salvar</button>
+        </form>
+    </section>
+{% endblock %}

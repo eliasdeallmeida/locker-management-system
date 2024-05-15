@@ -5,3 +5,7 @@ function student_add() {
 function student_delete() {
     return window.confirm('Tem certeza que deseja excluir esse aluno?')
 }
+
+function locker_delete() {
+    return window.confirm('Tem certeza que deseja excluir esse armário? Isso apagará as portas desse armário também.')
+}

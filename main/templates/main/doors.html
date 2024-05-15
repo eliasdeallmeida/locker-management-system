@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Portas {% endblock %}
+
+{% block content %}
+<section>
+    <div class="section-header">
+        <h1>Portas</h1>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Identificador</th>
+                <th>Ocupado</th>
+                <th>Aluno</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for door in doors %}
+                <tr>
+                    <td>{{ door.identifier|linebreaksbr }}</td>
+                    <td>{% if door.is_occupied %} Sim {% else %} Não {% endif %}</td>
+                    <td>{% if door.student %} {{ door.student|linebreaksbr }} {% else %} Vazio {% endif %}</td>
+                    <td>
+                        <div class="container-btn">
+                            <a href="{% url 'door_detail' pk=door.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
+                            <a href="{% url 'door_edit' pk=door.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

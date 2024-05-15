@@ -3,5 +3,44 @@
 {% block title %} Armários {% endblock %}
 
 {% block content %}
-    <p>Armários</p>
+    <section>
+        <div class="section-header">
+            <h1>Armários</h1>
+            <a href="{% url 'locker_add' %}">
+                <button class="add-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Adicionar
+                </button>
+            </a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Número de portas</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for locker in lockers %}
+                    <tr>
+                        <td>{{ locker.number|linebreaksbr }}</td>
+                        <td>{{ locker.number_of_doors|linebreaksbr }}</td>
+                        <td>
+                            <div class="container-btn">
+                                <a href="{% url 'locker_detail' pk=locker.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
+                                <a href="{% url 'locker_edit' pk=locker.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                <form action="{% url 'locker_delete' pk=locker.pk %}" method="POST" onsubmit="return locker_delete()">
+                                    {% csrf_token %}
+                                    <button class="delete-btn" type="submit">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
 {% endblock %}
