@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.container {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.logo-container {
+    background-color: #24252A;
+    padding: 30px 30px 20px 30px;
+    border-radius: 5px 5px 0 0;
+}
+
+.form-wrap {
+    background-color: #EDF0F1;
+    padding: 15px 30px 30px;
+    border-radius: 0 0 5px 5px;
+}
+
+.form-wrap * {
+    display: block;
+    width: 100%;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #24252A;
+}
+
+button {
+    margin-top: 30px;
+}

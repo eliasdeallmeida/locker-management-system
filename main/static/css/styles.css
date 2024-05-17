@@ -53,9 +53,12 @@ header {
     align-items: center;
 }
 
-header .logo {
+.logo {
+    color: #EDF0F1;;
     font-family: "Oswald";
+    font-weight: 500;
     font-size: 25px;
+    text-align: center;
     text-decoration: overline;
 }
 

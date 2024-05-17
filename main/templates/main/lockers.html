@@ -6,7 +6,7 @@
     <section>
         <div class="section-header">
             <h1>Armários</h1>
-            <a href="{% url 'locker_add' %}">
+            <a href="{% url 'main:locker_add' %}">
                 <button class="add-btn">
                     <i class="fa-solid fa-plus"></i>
                     Adicionar
@@ -28,9 +28,9 @@
                         <td>{{ locker.number_of_doors|linebreaksbr }}</td>
                         <td>
                             <div class="container-btn">
-                                <a href="{% url 'locker_detail' pk=locker.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
-                                <a href="{% url 'locker_edit' pk=locker.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
-                                <form action="{% url 'locker_delete' pk=locker.pk %}" method="POST" onsubmit="return locker_delete()">
+                                <a href="{% url 'main:locker_detail' pk=locker.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
+                                <a href="{% url 'main:locker_edit' pk=locker.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                <form action="{% url 'main:locker_delete' pk=locker.pk %}" method="POST" onsubmit="return locker_delete()">
                                     {% csrf_token %}
                                     <button class="delete-btn" type="submit">
                                         <i class="fa-solid fa-trash"></i>

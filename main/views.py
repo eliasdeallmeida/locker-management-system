@@ -1,24 +1,29 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Student, Locker, Door
-from .forms import StudentForm, LockerForm, DoorForm
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from .models import Student, Locker, Door
+from .forms import StudentForm, LockerForm, DoorForm
 
 
+@login_required
 def home(request):
     return render(request, 'main/home.html', {})
 
 
+@login_required
 def students(request):
     students = Student.objects.filter(is_active=True)
     return render(request, 'main/students.html', {'students': students})
 
 
+@login_required
 def student_detail(request, pk):
     student = get_object_or_404(Student, pk=pk)
     return render(request, 'main/student_detail.html', {'student': student})
 
 
+@login_required
 def student_add(request):
     if request.method == "POST":
         form = StudentForm(request.POST)
@@ -31,6 +36,7 @@ def student_add(request):
     return render(request, 'main/student_add.html', {'form': form})
 
 
+@login_required
 def student_edit(request, pk):
     student = get_object_or_404(Student, pk=pk)
     if request.method == "POST":
@@ -44,6 +50,7 @@ def student_edit(request, pk):
     return render(request, 'main/student_edit.html', {'form': form})
 
 
+@login_required
 def student_delete(request, pk):
     student = get_object_or_404(Student, pk=pk)
     if request.method == 'POST':
@@ -53,16 +60,19 @@ def student_delete(request, pk):
     return HttpResponseRedirect(reverse('students'))
 
 
+@login_required
 def lockers(request):
     lockers = Locker.objects.filter(is_active=True)
     return render(request, 'main/lockers.html', {'lockers': lockers})
 
 
+@login_required
 def locker_detail(request, pk):
     locker = get_object_or_404(Locker, pk=pk)
     return render(request, 'main/locker_detail.html', {'locker': locker})
 
 
+@login_required
 def locker_add(request):
     if request.method == "POST":
         form = LockerForm(request.POST)
@@ -80,6 +90,7 @@ def locker_add(request):
     return render(request, 'main/locker_add.html', {'form': form})
 
 
+@login_required
 def locker_edit(request, pk):
     locker = get_object_or_404(Locker, pk=pk)
     if request.method == "POST":
@@ -93,6 +104,7 @@ def locker_edit(request, pk):
     return render(request, 'main/locker_edit.html', {'form': form})
 
 
+@login_required
 def locker_delete(request, pk):
     locker = get_object_or_404(Locker, pk=pk)
     if request.method == 'POST':
@@ -103,16 +115,19 @@ def locker_delete(request, pk):
     return HttpResponseRedirect(reverse('lockers'))
 
 
+@login_required
 def doors(request):
     doors = Door.objects.filter(is_active=True)
     return render(request, 'main/doors.html', {'doors': doors})
 
 
+@login_required
 def door_detail(request, pk):
     door = get_object_or_404(Door, pk=pk)
     return render(request, 'main/door_detail.html', {'door': door})
 
 
+@login_required
 def door_edit(request, pk):
     door = get_object_or_404(Door, pk=pk)
     if request.method == "POST":

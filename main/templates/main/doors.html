@@ -24,8 +24,8 @@
                     <td>{% if door.student %} {{ door.student|linebreaksbr }} {% else %} Vazio {% endif %}</td>
                     <td>
                         <div class="container-btn">
-                            <a href="{% url 'door_detail' pk=door.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
-                            <a href="{% url 'door_edit' pk=door.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                            <a href="{% url 'main:door_detail' pk=door.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
+                            <a href="{% url 'main:door_edit' pk=door.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
                         </div>
                     </td>
                 </tr>

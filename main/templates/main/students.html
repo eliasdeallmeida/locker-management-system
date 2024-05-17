@@ -6,7 +6,7 @@
     <section>
         <div class="section-header">
             <h1>Alunos</h1>
-            <a href="{% url 'student_add' %}">
+            <a href="{% url 'main:student_add' %}">
                 <button class="add-btn">
                     <i class="fa-solid fa-plus"></i>
                     Adicionar
@@ -32,9 +32,9 @@
                         <td>{{ student.matricula|linebreaksbr }}</td>
                         <td>
                             <div class="container-btn">
-                                <a href="{% url 'student_detail' pk=student.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
-                                <a href="{% url 'student_edit' pk=student.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
-                                <form action="{% url 'student_delete' pk=student.pk %}" method="POST" onsubmit="return student_delete()">
+                                <a href="{% url 'main:student_detail' pk=student.pk %}"><button class="view-btn"><i class="fa-solid fa-eye"></i></button></a>
+                                <a href="{% url 'main:student_edit' pk=student.pk %}"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                <form action="{% url 'main:student_delete' pk=student.pk %}" method="POST" onsubmit="return student_delete()">
                                     {% csrf_token %}
                                     <button class="delete-btn" type="submit">
                                         <i class="fa-solid fa-trash"></i>
