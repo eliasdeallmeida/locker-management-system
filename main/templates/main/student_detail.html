@@ -6,19 +6,20 @@
     <section>
         <div class="section-header">
             <h1>Detalhes do aluno</h1>
-            <div class="section-btn">
-                <a href="{% url 'student_edit' pk=student.pk %}">
+            <div class="container-btn">
+                <a href="{% url 'main:student_edit' pk=student.pk %}">
                     <button class="edit-btn">
                         <i class="fa-solid fa-pen-to-square"></i>
                         Editar
                     </button>
                 </a>
-                <a href="{% url 'student_delete' pk=student.pk %}">
-                    <button class="delete-btn">
+                <form action="{% url 'main:student_delete' pk=student.pk %}" method="POST" onsubmit="return student_delete()">
+                    {% csrf_token %}
+                    <button class="delete-btn" type="submit">
                         <i class="fa-solid fa-trash"></i>
                         Excluir
                     </button>
-                </a>
+                </form>
             </div>
         </div>
         <p>Nome: {{ student.name }}</p>

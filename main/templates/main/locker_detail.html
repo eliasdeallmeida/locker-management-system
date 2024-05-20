@@ -6,19 +6,20 @@
     <section>
         <div class="section-header">
             <h1>Detalhes do armário</h1>
-            <div class="section-btn">
-                <a href="{% url 'locker_edit' pk=locker.pk %}">
+            <div class="container-btn">
+                <a href="{% url 'main:locker_edit' pk=locker.pk %}">
                     <button class="edit-btn">
                         <i class="fa-solid fa-pen-to-square"></i>
                         Editar
                     </button>
                 </a>
-                <a href="{% url 'locker_delete' pk=locker.pk %}">
-                    <button class="delete-btn">
+                <form action="{% url 'main:locker_delete' pk=locker.pk %}" method="POST" onsubmit="return locker_delete()">
+                    {% csrf_token %}
+                    <button class="delete-btn" type="submit">
                         <i class="fa-solid fa-trash"></i>
                         Excluir
                     </button>
-                </a>
+                </form>
             </div>
         </div>
         <p>Número: {{ locker.number }}</p>
