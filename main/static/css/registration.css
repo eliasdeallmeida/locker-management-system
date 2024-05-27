@@ -45,3 +45,13 @@ form input {
 button {
     margin-top: 30px;
 }
+
+.change-password {
+    margin-top: 20px;
+    color: rgb(0, 136, 169);
+    text-align: center;
+}
+
+.change-password:hover {
+    text-decoration: underline;
+}

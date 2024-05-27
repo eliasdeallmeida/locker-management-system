@@ -13,9 +13,10 @@
                 </button>
             </a>
         </div>
-        <table>
+        <table id="table">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Matrícula</th>
@@ -25,6 +26,7 @@
             <tbody>
                 {% for student in students %}
                     <tr>
+                        <td></td>
                         <td>{{ student.name|linebreaksbr }}</td>
                         <td>{{ student.email|linebreaksbr }}</td>
                         <td>{{ student.matricula|linebreaksbr }}</td>

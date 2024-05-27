@@ -10,6 +10,7 @@
     <table>
         <thead>
             <tr>
+                <th>#</th>
                 <th>Identificador</th>
                 <th>Ocupado</th>
                 <th>Aluno</th>
@@ -19,6 +20,7 @@
         <tbody>
             {% for door in doors %}
                 <tr>
+                    <td></td>
                     <td>{{ door.identifier|linebreaksbr }}</td>
                     <td>{% if door.is_occupied %} Sim {% else %} Não {% endif %}</td>
                     <td>{% if door.student %} {{ door.student|linebreaksbr }} {% else %} Vazio {% endif %}</td>

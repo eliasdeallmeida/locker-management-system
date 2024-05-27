@@ -16,6 +16,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Número</th>
                     <th>Número de portas</th>
                     <th>Ações</th>
@@ -24,6 +25,7 @@
             <tbody>
                 {% for locker in lockers %}
                     <tr>
+                        <td></td>
                         <td>{{ locker.number|linebreaksbr }}</td>
                         <td>{{ locker.number_of_doors|linebreaksbr }}</td>
                         <td>

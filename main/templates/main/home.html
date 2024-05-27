@@ -4,6 +4,6 @@
 
 {% block content %}
     <h1>Bem vindo(a)!</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic enim et illo qui in ut dignissimos possimus reiciendis voluptatibus, ducimus inventore incidunt nihil eveniet corrupti odio officiis maxime itaque vitae.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus et facilis magnam ipsum? Minus sequi numquam eius cumque, modi exercitationem placeat. Voluptatibus illo similique culpa qui temporibus consequatur esse vitae!</p>
+    <p>Locker Management System é um sistema capaz de gerenciar a ocupação de armários de uma instituição de ensino.</p>
+    <p>Você pode acessar as páginas de <a href="{% url 'main:students' %}">alunos</a> e <a href="{% url 'main:lockers' %}">armários</a> para listá-los ou adicionar um novo. Cada linha listada possui algumas informações e ações que você pode tomar. Ao adicionar um novo armário, o sistema automaticamente gera a quantidade de <a href="{% url 'main:doors' %}"> portas</a> indicada no formulário, onde cada porta de armário pode corresponder a um aluno.</p>
 {% endblock %}

@@ -1,3 +1,11 @@
+function show_current_year() {
+    document.getElementById('current-year').textContent = new Date().getFullYear()
+}
+
+window.onload = function() {
+    show_current_year()
+}
+
 function student_add() {
     window.alert('Aluno adicionado com sucesso!')
 }
